@@ -1,16 +1,22 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
-import { Outlet } from "react-router";
+import { Outlet, useNavigation } from "react-router";
+import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner";
 
 const RootLayouts = () => {
+  const navigation = useNavigation();
   return (
     <>
-      <div>
-        <Navbar></Navbar>
-        <Outlet></Outlet>
-        <Footer></Footer>
-      </div>
+      {navigation.state === "loading" ? (
+        <LoadingSpinner></LoadingSpinner>
+      ) : (
+        <div>
+          <Navbar></Navbar>
+          <Outlet></Outlet>
+          <Footer></Footer>
+        </div>
+      )}
     </>
   );
 };

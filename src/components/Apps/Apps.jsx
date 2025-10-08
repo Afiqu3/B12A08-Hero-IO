@@ -1,16 +1,23 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
 import App from "./App";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 const Apps = ({ apps }) => {
   const [totalApps, setTotalApps] = useState(apps);
-//   const [query, setQuery] = useState("");
+  const [loading, setLoading] = useState(false);
+  //   const [query, setQuery] = useState("");
   const handleSearch = (e) => {
     const name = e.target.value.toLowerCase();
-    const filteredApps = apps.filter((a) =>
-      a.title.toLowerCase().includes(name)
-    );
-    setTotalApps(filteredApps);
+    setLoading(true);
+    // console.log(loading)
+    setTimeout(() => {
+      const filteredApps = apps.filter((a) =>
+        a.title.toLowerCase().includes(name)
+      );
+      setTotalApps(filteredApps);
+      setLoading(false);
+    }, 500);
   };
   return (
     <div className="bg-[#f5f5f5]">
@@ -53,20 +60,25 @@ const Apps = ({ apps }) => {
             />
           </label>
         </div>
-        {totalApps.length === 0 && (
-            <div className="flex flex-col justify-center items-center mt-5.5 py-40">
-              <h1 className="text-4xl font-bold">No Apps Found</h1>
-              <div className="mt-5 text-center">
-                <Link
-                  to={"/apps"}
-                  target="_parent"
-                  className="btn w-[145px] bg-gradient-to-r from-[#632ee3] to-[#9f62f2] text-white rounded px-4 py-3 hover:-translate-y-0.5"
-                >
-                  Show All Apps
-                </Link>
-              </div>
+        {loading && (
+          <div className="flex justify-center items-center py-20">
+            <LoadingSpinner></LoadingSpinner>
+          </div>
+        )}
+        {!loading && totalApps.length === 0 && (
+          <div className="flex flex-col justify-center items-center mt-5.5 py-40">
+            <h1 className="text-4xl font-bold">No Apps Found</h1>
+            <div className="mt-5 text-center">
+              <Link
+                to={"/apps"}
+                target="_parent"
+                className="btn w-[145px] bg-gradient-to-r from-[#632ee3] to-[#9f62f2] text-white rounded px-4 py-3 hover:-translate-y-0.5"
+              >
+                Show All Apps
+              </Link>
             </div>
-          )}
+          </div>
+        )}
         <div className="mt-5.5 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 p-2 lg:p-0 ">
           {totalApps.map((app) => (
             <App key={app.id} app={app}></App>

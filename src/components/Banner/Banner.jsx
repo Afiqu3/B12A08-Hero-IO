@@ -15,8 +15,8 @@ const Banner = () => {
             <p className="text-[#627382] text-sm sm:text-base">At HERO.IO, we craft innovative apps designed to make everyday life simpler, smarter, and more exciting. Our goal is to turn your ideas into digital experiences that truly make an impact.</p>
         </div>
         <div className="flex sm:flex-row flex-col justify-center pt-10 gap-4 sm:p-0 p-20 sm:mt-10 mt-5">
-            <Link className="btn border-1 border-[#d2d2d2] rounded sm:py-3 sm:px-6 sm:text-xl text-sm font-semibold hover:-translate-y-0.5"> <img className="w-5 h-5 sm:w-8 sm:h-8" src={googleStoreImg} alt="" />Googly Play</Link>
-            <Link className="btn border-1 border-[#d2d2d2] rounded sm:py-3 sm:px-6 sm:text-xl text-sm font-semibold hover:-translate-y-0.5"><img className="w-5 h-5 sm:w-8 sm:h-8" src={appStoreImg} alt="" />Googly Play</Link>
+            <Link to={'https://play.google.com/store/games?device=phone&hl=en'} className="btn border-1 border-[#d2d2d2] rounded sm:py-3 sm:px-6 sm:text-xl text-sm font-semibold hover:-translate-y-0.5"> <img className="w-5 h-5 sm:w-8 sm:h-8" src={googleStoreImg} alt="" />Googly Play</Link>
+            <Link to={'https://www.apple.com/app-store/'} className="btn border-1 border-[#d2d2d2] rounded sm:py-3 sm:px-6 sm:text-xl text-sm font-semibold hover:-translate-y-0.5"><img className="w-5 h-5 sm:w-8 sm:h-8" src={appStoreImg} alt="" />Googly Play</Link>
         </div>
         <div className="flex justify-center lg:mt-10 mt-3">
             <img src={heroImg} alt="" />
