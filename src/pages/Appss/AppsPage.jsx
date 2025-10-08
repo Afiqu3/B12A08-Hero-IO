@@ -1,12 +1,14 @@
-import React from 'react';
-import Apps from '../../components/Apps/Apps';
+import React from "react";
+import Apps from "../../components/Apps/Apps";
+import { useLoaderData } from "react-router";
 
 const AppsPage = () => {
-    return (
-        <div>
-            <Apps></Apps>
-        </div>
-    );
+  const { data: apps } = useLoaderData();
+  return (
+    <div>
+      <Apps apps={apps}></Apps>
+    </div>
+  );
 };
 
 export default AppsPage;
