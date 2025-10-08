@@ -30,7 +30,7 @@ const Apps = ({ apps }) => {
             Explore All Apps on the Market developed by us. We code for Millions
           </p>
         </div>
-        <div className="mt-10 flex justify-between sm:flex-row flex-col sm:gap-0 gap-4">
+        <div className="mt-10 flex sm:justify-between sm:flex-row flex-col justify-center items-center sm:gap-0 gap-4">
           <p className="text-2xl font-semibold text-center sm:text-left">
             ({totalApps.length}) Apps Found
           </p>
