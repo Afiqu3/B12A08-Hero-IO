@@ -67,7 +67,7 @@ const Navbar = () => {
             to={"https://github.com/Afiqu3"}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn bg-gradient-to-r from-[#632ee3] to-[#9f62f2] text-white rounded px-4 py-3"
+            className="btn bg-gradient-to-r from-[#632ee3] to-[#9f62f2] text-white rounded px-4 py-3 hover:-translate-y-0.5"
           >
             <img src={gitImg} alt="" />
             Contribute
@@ -75,7 +75,7 @@ const Navbar = () => {
         </div>
       </nav>
       {isOpen && (
-        <div className="md:hidden mt-2 mb-5 ml-10 space-y-3 max-w-45 relative h-20">
+        <div className="md:hidden mt-2 mb-5 ml-10 space-y-3 max-w-45 relative h-35">
           <ul className={`space-y-3 animation`}>{links}</ul>
           <div>
             <Link
