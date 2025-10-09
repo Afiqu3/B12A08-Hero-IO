@@ -8,6 +8,7 @@ import AppDetails from "../components/Apps/AppDetails";
 import AppFoundError from "../pages/AppFoundError/AppFoundError";
 import ErrorRoutes from "../pages/ErrorRoutes/ErrorRoutes";
 import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner";
+import Installation from "../pages/Installation/Installation";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,11 @@ export const router = createBrowserRouter([
         Component: AppDetails,
         errorElement: <AppFoundError></AppFoundError>,
       },
+      {
+        path: "/installation",
+        Component: Installation,
+        loader: () => axios("/appData.json"),
+      }
     ],
   },
   {
