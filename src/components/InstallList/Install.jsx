@@ -16,7 +16,7 @@ const Install = ({ install, handleUninstall }) => {
             <div className="mt-4 flex gap-4">
               <div className="flex items-center">
                 <img src={downloadImg} alt="" />
-                <p className="text-[#00d390] ml-1">{downloads}</p>
+                <p className="text-[#00d390] ml-1">{downloads}M</p>
               </div>
               <div className="flex items-center">
                 <img src={starImg} alt="" />

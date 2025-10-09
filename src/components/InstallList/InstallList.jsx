@@ -22,12 +22,12 @@ const InstallList = () => {
   const handleSort = (type) => {
     setSortType(type);
     if (type === "LowHigh") {
-      const newData = [...installList].sort((a, b) => a.size - b.size);
+      const newData = [...installList].sort((a, b) => a.downloads - b.downloads);
       console.log(newData);
       setInstallList(newData);
     }
     if (type === "highLow") {
-      const newData = [...installList].sort((a, b) => b.size - a.size);
+      const newData = [...installList].sort((a, b) => b.downloads - a.downloads);
       console.log(newData);
       setInstallList(newData);
     }

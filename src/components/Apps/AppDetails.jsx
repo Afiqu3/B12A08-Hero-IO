@@ -56,7 +56,7 @@ const AppDetails = () => {
               <div className="sm:block flex flex-col justify-center items-center">
                 <img src={downloadIcon} alt="" />
                 <p className="text-[#001931cc] mt-2">Downloads</p>
-                <h2 className="text-4xl font-extrabold">{downloads}</h2>
+                <h2 className="text-4xl font-extrabold">{downloads}M</h2>
               </div>
               <div className="sm:block flex flex-col justify-center items-center">
                 <img src={ratingIcon} alt="" />

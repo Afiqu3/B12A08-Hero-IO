@@ -17,7 +17,7 @@ const App = ({ app }) => {
       <div className="mt-4 flex justify-between items-center">
         <button className="py-1.5 px-2.5 bg-[#F1F5E8] text-[#00d390] flex items-center rounded gap-2">
           <img className="w-4 h-4" src={downloadImg} alt="" />
-          {downloads}
+          {downloads}M
         </button>
         <button className="py-1.5 px-2.5 bg-[#FFF0E1] text-[#FF8811] flex items-center rounded gap-2">
           <img className="w-4 h-4" src={starImg} alt="" />
