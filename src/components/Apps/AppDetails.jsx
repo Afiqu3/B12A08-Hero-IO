@@ -73,7 +73,7 @@ const AppDetails = () => {
               <button
                 onClick={() => handleInstall()}
                 disabled={install}
-                className="btn bg-[#00d390] text-white rounded disabled:!bg-[#00d390] disabled:text-white disabled:opacity-100 disabled:cursor-not-allowed"
+                className="btn bg-[#00d390] text-white rounded shadow-md drop-shadow-2l disabled:!bg-[#00d390] disabled:text-white disabled:opacity-100 disabled:cursor-not-allowed disabled:drop-shadow-xl"
               >
                 {install ? "Installed" : `Install Now (${size} MB)`}
               </button>
