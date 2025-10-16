@@ -15,7 +15,7 @@ Hero IO emphasizes **UI/UX quality, responsive design**, and **stateful data man
 
 - **Responsive Design:** Works seamlessly across all device sizes.  
 - **Dynamic Navigation:** Smooth routing between pages with custom error handling.  
-- **JSON-Based App Data:** Displays 12–20 sample apps with images, titles, ratings, and download counts.  
+- **JSON-Based App Data:** Displays 28 sample apps with images, titles, ratings, and download counts.  
 - **Search Functionality:** Live search with case-insensitive filtering and “No App Found” feedback.  
 - **App Details Page:** Interactive layout showing app stats, charts (via Recharts), and install behavior.  
 - **LocalStorage Integration:** Save installed apps and manage them from “My Installation” page.  
