@@ -7,13 +7,22 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import logoImg from "../../assets/logo.png";
+import { Link } from "react-router";
 
 const Footer = () => {
   const bottomLinks = [
-    { Icon: FaFacebookF, label: "Facebook", href: "#" },
-    { Icon: FaGithub, label: "GitHub", href: "#" },
+    {
+      Icon: FaFacebookF,
+      label: "Facebook",
+      href: "https://www.facebook.com/afique.hossain.J/",
+    },
+    { Icon: FaGithub, label: "GitHub", href: "https://github.com/Afiqu3" },
     { Icon: FaInstagram, label: "Instagram", href: "#" },
-    { Icon: FaLinkedin, label: "LinkedIn", href: "#" },
+    {
+      Icon: FaLinkedin,
+      label: "LinkedIn",
+      href: "www.linkedin.com/in/md-afique-hossain",
+    },
   ];
   const productList = [
     ["Apps", "#apps"],
@@ -56,14 +65,16 @@ const Footer = () => {
             </p>
 
             <div className="mt-6 flex items-center gap-3">
-              {bottomLinks.map(({ Icon, label }) => (
-                <a
+              {bottomLinks.map(({ Icon, label, href }) => (
+                <Link
+                  to={href}
+                  target="_blank"
                   key={label}
                   aria-label={label}
                   className="group p-2 rounded-lg ring-1 ring-white/10 hover:ring-white/40 hover:-translate-y-0.5 transition bg-white/5 cursor-pointer"
                 >
-                 <Icon className="w-4 h-4 text-gray-300 group-hover:text-white"></Icon>
-                </a>
+                  <Icon className="w-4 h-4 text-gray-300 group-hover:text-white"></Icon>
+                </Link>
               ))}
             </div>
 

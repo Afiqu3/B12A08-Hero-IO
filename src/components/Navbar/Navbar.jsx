@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Links from "./Links";
 import { IoIosMenu } from "react-icons/io";
 import { TbXboxXFilled } from "react-icons/tb";
@@ -30,8 +30,23 @@ const Navbar = () => {
     <Links key={nav.id} nav={nav}></Links>
   ));
   const [isOpen, setIsOpen] = useState(false);
+  // scroll handle
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <div className="md:shadow-sm">
+    <div className={`sticky top-0 z-50 transition-all duration-0 ${
+        scrolled ? "bg-white/90 shadow-md backdrop-blur" : "bg-transparent"
+      }`}>
       <nav
         className={`flex justify-between items-center pt-7 max-w-6xl lg:mx-auto mx-5 md:py-7 ${
           !isOpen ? "pb-7" : ""
@@ -49,7 +64,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(!isOpen)}
             ></IoIosMenu>
           )}
-          <h3 className="text-xl font-bold">
+          <h3 className="text-xl font-extrabold">
             <Link
               to={`/`}
               className="flex items-center gap-x-1 bg-gradient-to-r from-[#632ee3] to-[#9f62f2] bg-clip-text text-transparent"

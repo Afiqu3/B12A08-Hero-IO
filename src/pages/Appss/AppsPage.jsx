@@ -6,6 +6,7 @@ const AppsPage = () => {
   const { data: apps } = useLoaderData();
   return (
     <div>
+      <title>Apps</title>
       <Apps apps={apps}></Apps>
     </div>
   );

@@ -5,6 +5,7 @@ import ratingIcon from "../../assets/icon-ratings.png";
 import reviewsIcon from "../../assets/icon-review.png";
 import ReviewChart from "../ReviewChart/ReviewChart";
 import { addToStoreToDB, getStoreItem } from "../../utility/addToDB";
+import './appDetailsBtn.css';
 
 const AppDetails = () => {
   const [install, setInstall] = useState(false);
@@ -34,6 +35,7 @@ const AppDetails = () => {
   };
   return (
     <div className="bg-[#f5f5f5]">
+      <title>{title}</title>
       <div className="max-w-6xl mx-auto py-20">
         <div className="flex sm:flex-row flex-col">
           <div className="flex-1 flex justify-center items-center">
@@ -73,7 +75,7 @@ const AppDetails = () => {
               <button
                 onClick={() => handleInstall()}
                 disabled={install}
-                className="btn bg-[#00d390] text-white rounded shadow-md drop-shadow-2l disabled:!bg-[#00d390] disabled:text-white disabled:opacity-100 disabled:cursor-not-allowed disabled:drop-shadow-xl"
+                className={`btn ${!install && 'glitter'} bg-[#00d390] text-white rounded shadow-md drop-shadow-2l disabled:!bg-[#00d390] disabled:text-white disabled:opacity-100 disabled:cursor-not-allowed disabled:drop-shadow-xl`}
               >
                 {install ? "Installed" : `Install Now (${size} MB)`}
               </button>
