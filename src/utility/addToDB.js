@@ -12,7 +12,7 @@ const getStoreItem = () => {
 
 const addToStoreToDB = (id) => {
   const storeItem = getStoreItem();
-  console.log(storeItem);
+  // console.log(storeItem);
   if (storeItem.includes(id)) {
     return;
   } else {

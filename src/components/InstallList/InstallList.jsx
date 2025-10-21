@@ -25,14 +25,14 @@ const InstallList = () => {
       const newData = [...installList].sort(
         (a, b) => a.downloads - b.downloads
       );
-      console.log(newData);
+      // console.log(newData);
       setInstallList(newData);
     }
     if (type === "highLow") {
       const newData = [...installList].sort(
         (a, b) => b.downloads - a.downloads
       );
-      console.log(newData);
+      // console.log(newData);
       setInstallList(newData);
     }
   };

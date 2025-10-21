@@ -29,7 +29,7 @@ const AppDetails = () => {
     markInstall && setInstall(true);
   }, [id]);
   const handleInstall = () => {
-    console.log(id)
+    // console.log(id)
     addToStoreToDB(id);
     setInstall(true);
   };
